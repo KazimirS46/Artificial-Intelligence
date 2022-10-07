@@ -391,6 +391,11 @@ body {
   margin: 0 auto;
 }
 
+.wrapper-777 {
+  position: relative;
+  margin: 0 auto;
+}
+
 .feature-slider__wrapper {
   position: relative;
   width: 1920px;
@@ -489,14 +494,20 @@ body {
   top: 170px;
   width: 40px;
   height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 0;
 }
 
 .button-prev {
-  left: 275px;
+  left: -50px;
+  transform: rotate(180deg);
+  background: url('../img/svg/Arrow.svg') no-repeat center center;
 }
 
 .button-next {
-  right: 275px;
+  right: -50px;
+  background: url('../img/svg/Arrow.svg') no-repeat center center;
 }
 
 /* ABOUT */
@@ -741,9 +752,12 @@ address a:focus {
 }
 
 @media (max-width: 1919px) {
-  .feature-slider__wrapper {
+  .wrapper-777 {
     width: 1136px;
-    /* outline: 5px solid #1f3a68; */
+  }
+
+  .feature-slider__wrapper {
+    width: 100%;
   }
 
   .feature-slider__button {
@@ -752,7 +766,6 @@ address a:focus {
 
   .feature-slider {
     justify-content: start;
-    /* outline: 1px solid #fff; */
   }
 }
 
