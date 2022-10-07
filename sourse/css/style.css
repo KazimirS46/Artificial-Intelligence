@@ -305,6 +305,43 @@ body {
   filter: drop-shadow(0 0 20px #3a68b8);
 }
 
+/* MODAL */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  transition-duration: 0.3s;
+  z-index: -2;
+}
+
+.overlay--visible {
+  z-index: 10;
+  background-color: rgba(2, 10, 24, 0.5);
+}
+
+.hero__video {
+  display: block;
+  width: 1024px;
+  height: 576px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  scale: 0.8;
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+.hero__video--visible {
+  margin-top: 20vh;
+  scale: 1;
+  opacity: 1;
+}
+
+/* MODAL END */
+
 /* LEARNING */
 
 .learning {
