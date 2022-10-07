@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/log-in.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="auth-header">
+        <a href="../../index.html" class="logo-link">
+          <img
+            src="../img/svg/footer-logo-robot.svg"
+            alt="Логотип"
+            class="logo"
+          />
+        </a>
+      </header>
+      <main class="auth-main">
+        <div class="authorization-wrapper">
+          <h2 class="form-title">
+            Sign in to
+            <a href="" class="company-logo">Artificial intelligence</a>
+          </h2>
+          <form action="../../index.html" class="authorization-form">
+            <label for="login-field"> Username </label>
+            <input
+              type="text"
+              name="login"
+              id="login-field"
+              autofocus
+              placeholder="Login"
+            />
+
+            <label for="password-field">Password </label>
+            <input
+              type="password"
+              name="password"
+              id="password-field"
+              placeholder="Password"
+            />
+            <div>
+              <label for="remember-checkbox">Remember Me</label>
+              <input type="checkbox" name="remember" id="remember-checkbox" />
+            </div>
+
+            <input type="submit" value="Sign In" class="button" />
+          </form>
+        </div>
+        <div class="registration-wrapper">
+          <h2 class="registration-title">Registration</h2>
+          <a href="./registration.html" class="button">Create an account</a>
+        </div>
+      </main>
+
+      <footer class="auth-footer">
+        <div class="contacts" id="contacts">
+          <address class="contacts-address">
+            <a href="#" class="company__link">
+              <img
+                src="../img/svg/footer-logo-robot.svg"
+                alt="Логогип компании"
+                class="company__logo"
+                width="30"
+              />
+            </a>
+            <a href="mailto:Company@gmail.com.com" class="company__mail">
+              <img src="../img/svg/footer-mail-icon.svg" alt="e-mail" />
+              Company@gmail.com.com
+            </a>
+            <a href="tel:(064) 332-1233" class="company__phone">
+              <img src="../img/svg/footer-phone-icon.svg" alt="phone" />
+              Phone: (064) 332-1233
+            </a>
+            <a href="#!" class="company__address">
+              <img src="../img/svg/footer-location-icon.svg" alt="location" />
+              450 Wall Street, USA, New York
+            </a>
+          </address>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
