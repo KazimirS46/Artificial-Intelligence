@@ -56,10 +56,6 @@
   box-sizing: border-box;
 }
 
-*:focus {
-  outline: none;
-}
-
 a {
   display: inline-block;
   text-decoration: none;
@@ -109,11 +105,6 @@ body {
 
 .button:hover {
   background: rgba(58, 104, 184, 0.8);
-}
-
-.button:focus {
-  background: rgba(58, 104, 184, 0.8);
-  box-shadow: 0 0 3px 3px #3a68b8;
 }
 
 .button:active {
