@@ -323,6 +323,7 @@ body {
   scale: 0.8;
   opacity: 0;
   transition-duration: 0.3s;
+  border: 0;
 }
 
 .hero__video--visible {
