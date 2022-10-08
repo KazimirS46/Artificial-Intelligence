@@ -395,6 +395,62 @@ body {
   z-index: -1;
 }
 
+/*LEARNING MODAL*/
+
+.learning__modal .modal__overlay,
+.learning__modal .modal__window {
+  opacity: 0;
+  z-index: -3;
+}
+
+.learning__modal.open .modal__overlay,
+.learning__modal.open .modal__window {
+  opacity: 1;
+  z-index: 3;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(2, 10, 24, 0.6);
+}
+
+.modal__window .learning__title {
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.modal__window .learning__description {
+  max-width: 100%;
+  margin: 0;
+}
+
+.modal__window {
+  position: relative;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 40vw;
+  text-align: center;
+  background-color: #0e2244;
+}
+
+.modal__window .close-button {
+  position: absolute;
+  display: block;
+  line-height: 16px;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/*LEARNINGMODAL END*/
+
 /* FEATURE */
 
 .container-feature {
