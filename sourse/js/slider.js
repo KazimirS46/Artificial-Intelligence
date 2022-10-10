@@ -22,7 +22,19 @@ function setDefaultPosition() {
   });
 }
 
-const stepWidth = 387;
+function stepWidth() {
+  let slideWidthString = getComputedStyle(slides[0]).width;
+  let slideWidth = Number(
+    slideWidthString.slice(0, slideWidthString.length - 2)
+  );
+
+  let sliderGapProp = getComputedStyle(slider).columnGap;
+  let sliderGap = Number(sliderGapProp.slice(0, sliderGapProp.length - 2));
+
+  return slideWidth + sliderGap;
+}
+
+// const stepWidth = 387;
 let step = 0;
 let offset = 0;
 
@@ -30,19 +42,19 @@ function switchingForward() {
   nextButton.removeEventListener('click', switchingForward);
   checkAvailabilityClass();
   // 1) Сдвигаем сцену
-  slider.style.transform = `translateX( ${(offset -= stepWidth)}px )`;
+  slider.style.transform = `translateX( ${(offset -= stepWidth())}px )`;
   step -= 1;
   setTimeout(() => {
     // 2) Перемещаем первый по порядку слайд в конец.
     if (step < 0) {
       slides[-step - 1].style.transform = `translateX(${
-        stepWidth * slides.length
+        stepWidth() * slides.length
       }px)`;
     } else {
       slides[slides.length - (step + 1)].style.transform = `translateX(0px)`;
     }
     // Если сцена сдвинута на все слайды назад - возвращаем положение слайдов и сцены в начальное положение
-    if (offset == -(stepWidth * slides.length)) {
+    if (offset == -(stepWidth() * slides.length)) {
       setDefaultPosition();
     }
     nextButton.addEventListener('click', switchingForward);
@@ -57,17 +69,17 @@ function switchingBack() {
     slides[-step - 1].style.transform = `translateX(0px)`;
   } else {
     slides[slides.length - (step + 1)].style.transform = `translateX(-${
-      stepWidth * slides.length
+      stepWidth() * slides.length
     }px)`;
   }
 
   // 2)Сдвигаем сцену
-  slider.style.transform = `translateX( ${(offset += stepWidth)}px )`;
+  slider.style.transform = `translateX( ${(offset += stepWidth())}px )`;
   step += 1;
 
   setTimeout(() => {
     // Если сцена сдвинута на все слайды вперед - возвращаем положение слайдов и сцены в начальное положение
-    if (offset == stepWidth * slides.length) {
+    if (offset == stepWidth() * slides.length) {
       setDefaultPosition();
     }
     prevButton.addEventListener('click', switchingBack);
