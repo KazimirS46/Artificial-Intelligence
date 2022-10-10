@@ -298,20 +298,48 @@ body {
 
 /* MODAL */
 
+.hero__modal.open .overlay,
+.hero__modal.open .hero__video {
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero__modal.hide .overlay,
+.hero__modal.hide .hero__video {
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero__modal.open .overlay {
+  background-color: rgba(2, 10, 24, 0.6);
+}
+
+.hero__modal.open .hero__video {
+  transform: translateY(10vh);
+}
+
+.hero__modal.hide .overlay {
+  background-color: rgba(2, 10, 24, 0);
+}
+
+.hero__modal.hide .hero__video {
+  transform: translateY(-200px);
+}
+
+.overlay,
+.hero__video {
+  opacity: 0;
+  z-index: -1;
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: transparent;
-  transition-duration: 0.3s;
-  z-index: -2;
-}
-
-.overlay--visible {
-  z-index: 10;
-  background-color: rgba(2, 10, 24, 0.5);
+  background-color: rgba(2, 10, 24, 0);
+  transition: background-color 0.2s ease-in;
 }
 
 .hero__video {
@@ -319,16 +347,9 @@ body {
   width: 1024px;
   height: 576px;
   margin: 0 auto;
-  margin-top: 10vh;
-  scale: 0.8;
-  opacity: 0;
-  transition-duration: 0.3s;
-}
-
-.hero__video--visible {
-  margin-top: 20vh;
-  scale: 1;
-  opacity: 1;
+  border: none;
+  transform: translateY(-200px);
+  transition: transform 0.2s ease-in;
 }
 
 /* MODAL END */
@@ -373,6 +394,62 @@ body {
   left: -132px;
   z-index: -1;
 }
+
+/*LEARNING MODAL*/
+
+.learning__modal .modal__overlay,
+.learning__modal .modal__window {
+  opacity: 0;
+  z-index: -3;
+}
+
+.learning__modal.open .modal__overlay,
+.learning__modal.open .modal__window {
+  opacity: 1;
+  z-index: 3;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(2, 10, 24, 0.6);
+}
+
+.modal__window .learning__title {
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.modal__window .learning__description {
+  max-width: 100%;
+  margin: 0;
+}
+
+.modal__window {
+  position: relative;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 40vw;
+  text-align: center;
+  background-color: #0e2244;
+}
+
+.modal__window .close-button {
+  position: absolute;
+  display: block;
+  line-height: 16px;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/*LEARNINGMODAL END*/
 
 /* FEATURE */
 
