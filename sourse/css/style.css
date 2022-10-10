@@ -593,7 +593,7 @@ body {
   position: absolute;
   content: '';
   width: 642px;
-  height: 551px;
+  height: 600px;
   top: 0;
   right: 0;
   background-image: url('./../img/png/about-background.png');
@@ -628,7 +628,6 @@ body {
   font-family: 'Circular Std', sans-serif;
   font-style: normal;
   font-weight: 200;
-  font-size: 14px;
   line-height: 18px;
   color: rgba(255, 255, 255, 0.6);
   background: linear-gradient(
@@ -679,29 +678,12 @@ body {
   margin-bottom: 8px;
 }
 
-.company__title {
-  margin: 0;
-  margin-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-  color: #3a68b8;
-}
-
 .company__info {
   margin: 0;
   margin-bottom: 37px;
   font-weight: 300;
   font-size: 14px;
   line-height: 18px;
-}
-
-.company__mail,
-.company__phone,
-.company__address {
-  font-style: normal;
 }
 
 .company__mail img,
@@ -716,6 +698,7 @@ body {
 .company__address {
   margin-bottom: 20px;
   vertical-align: top;
+  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -867,7 +850,7 @@ address a:focus {
 
   .container {
     max-width: 1000px;
-    padding: 0 10px;
+    padding: 0 30px;
   }
 
   .button {
@@ -979,7 +962,8 @@ address a:focus {
   }
 
   .learning__title {
-    font-size: 30px;
+    font-size: 2em;
+    font-weight: 600;
   }
 
   .learning__info-image {
@@ -1048,5 +1032,151 @@ address a:focus {
     padding: 50px 0;
   }
 
+  .about-content {
+    padding: 0;
+  }
+
+  .about-content::after {
+    width: 45%;
+    height: 400px;
+    top: 75px;
+    right: 10%;
+    background-size: 100%;
+  }
+
+  .about__info {
+    max-width: 55%;
+    margin-left: 10%;
+  }
+
+  .about__title {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 2em;
+  }
+
+  .about__text {
+    max-width: 55%;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
   /* ABOUT END */
+
+  /* FOOTER */
+
+  .footer {
+    padding: 50px;
+    font-weight: 200;
+    font-size: 1em;
+    line-height: 10px;
+  }
+
+  .footer-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .contacts {
+    max-width: 20%;
+    margin-right: 15px;
+  }
+
+  .company__link {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .company__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 22px;
+    color: #3a68b8;
+  }
+
+  .company__logo {
+    width: 2.3vw;
+    margin: 0;
+    margin-right: 15px;
+  }
+
+  .company__info {
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 1em;
+  }
+
+  .contacts-address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 10vw;
+  }
+
+  .company__mail img,
+  .company__phone img,
+  .company__address img {
+    width: 1.6vw;
+  }
+
+  .company__mail,
+  .company__phone,
+  .company__address {
+    margin-bottom: 0;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .services__list {
+    margin: 0;
+  }
+
+  .services__item--title {
+    margin-bottom: 23px;
+  }
+
+  .services__item--title.about-title {
+    margin-bottom: 17px;
+  }
+
+  .services__item--title--h4 {
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 20px;
+    color: #fff;
+  }
+
+  .services__list {
+    min-width: 140px;
+  }
+
+  .services__item {
+    margin-bottom: 17px;
+  }
+
+  .services__store {
+    max-width: 235px;
+  }
+
+  .services__about {
+    margin-bottom: 10px;
+  }
+
+  .services__about--desk {
+    line-height: 20px;
+  }
+
+  .store__link {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .store__social {
+    margin-bottom: 10px;
+  }
+
+  /* FOOTER END */
 }
