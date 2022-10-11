@@ -563,6 +563,7 @@ body {
   border: none;
   border-radius: 50%;
   font-size: 0;
+  cursor: pointer;
 }
 
 .button-prev {

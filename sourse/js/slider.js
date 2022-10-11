@@ -1,22 +1,31 @@
 'use strict';
 
-const prevButton = document.querySelector('.button-prev');
-const nextButton = document.querySelector('.button-next');
-const slider = document.querySelector('.feature-slider');
-const shift = document.querySelector('.feature-slider--shifted');
-let slides = document.querySelectorAll('.feature-slider__slide');
+const classNames = {
+  buttonPrev: 'button-prev',
+  buttonNext: 'button-next',
+  slider: 'feature-slider',
+  sliderShifted: 'feature-slider__shifted',
+  slide: 'feature-slider__slide',
+}
 
-function checkAvailabilityClass() {
-  if (!slider.classList.contains('feature-slider--shifted')) {
-    slider.classList.add('feature-slider--shifted');
+const prevButton = document.querySelector(`.${classNames.buttonPrev}`);
+const nextButton = document.querySelector(`.${classNames.buttonNext}`);
+const slider = document.querySelector(`.${classNames.slider}`);
+const slides = document.querySelectorAll(`.${classNames.slide}`);
+
+function toggleSlideShifted() {
+  if (!slider.classList.contains(classNames.sliderShifted)) {
+    slider.classList.add(classNames.sliderShifted);
   }
 }
 
 function setDefaultPosition() {
-  slider.classList.remove('feature-slider--shifted');
+  toggleSlideShifted();
+  slider.classList.remove(classNames.sliderShifted);
   offset = 0;
   step = 0;
   slider.style.transform = `translateX(0)`;
+
   slides.forEach((item) => {
     item.style.transform = null;
   });
@@ -40,7 +49,7 @@ let offset = 0;
 
 function switchingForward() {
   nextButton.removeEventListener('click', switchingForward);
-  checkAvailabilityClass();
+  toggleSlideShifted();
   // 1) Сдвигаем сцену
   slider.style.transform = `translateX( ${(offset -= stepWidth())}px )`;
   step -= 1;
@@ -63,7 +72,7 @@ function switchingForward() {
 
 function switchingBack() {
   prevButton.removeEventListener('click', switchingBack);
-  checkAvailabilityClass();
+  toggleSlideShifted();
   // 1)перемещаем крайний слайд в начало
   if (step < 0) {
     slides[-step - 1].style.transform = `translateX(0px)`;
