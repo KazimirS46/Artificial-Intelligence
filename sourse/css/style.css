@@ -131,6 +131,7 @@ body {
 }
 
 .navigation {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -187,6 +188,120 @@ body {
 
 .menu__button {
   display: none;
+  top: 10px;
+  z-index: 2;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.menu__button span {
+  height: 2px;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  background-color: #3a68b8;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu__button::before,
+.menu__button::after {
+  left: 0;
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: #3a68b8;
+  border-radius: 2px;
+  position: absolute;
+  transform-origin: center center;
+  transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out, top 0.2s ease-in-out, bottom 0.2s ease-in-out,
+    left 0.2s ease-in-out, right 0.2s ease-in-out;
+}
+
+.menu__button::before {
+  top: 0;
+}
+.menu__button::after {
+  bottom: 0;
+}
+
+.menu-open span {
+  background: rgba(255, 255, 255, 0);
+}
+.menu-open::before {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+.menu-open::after {
+  bottom: 9px;
+  transform: rotate(45deg);
+}
+.menu-open::before,
+.menu-open::after {
+  width: 20px;
+  background: #fff;
+}
+.menu-open:hover span,
+.menu-open:focus span,
+.menu-open:active span {
+  background: rgba(255, 255, 255, 0);
+}
+.menu-open:hover::before,
+.menu-open:focus::before,
+.menu-open:active::before {
+  top: 8px;
+  left: -3px;
+  transform: rotate(-45deg);
+}
+.menu-open:hover::after,
+.menu-open:focus::after,
+.menu-open:active::after {
+  left: 9px;
+  bottom: 8px;
+  transform: rotate(45deg);
+}
+.menu-open:hover::before,
+.menu-open:focus::before,
+.menu-open:active::before,
+.menu-open:hover::after,
+.menu-open:focus::after,
+.menu-open:active::after {
+  width: 18px;
+}
+
+.menu__button:hover span,
+.menu__button:focus span,
+.menu__button:active span {
+  background: rgba(255, 255, 255, 0);
+}
+.menu__button:hover::before,
+.menu__button:focus::before,
+.menu__button:active::before {
+  top: 10px;
+  left: -3px;
+  transform: rotate(45deg);
+}
+.menu__button:hover::after,
+.menu__button:focus::after,
+.menu__button:active::after {
+  left: 9px;
+  bottom: 8px;
+  transform: rotate(-45deg);
+}
+.menu__button:hover::before,
+.menu__button:focus::before,
+.menu__button:active::before,
+.menu__button:hover::after,
+.menu__button:focus::after,
+.menu__button:active::after {
+  width: 18px;
 }
 
 .navigation-fixed {
@@ -1328,24 +1443,89 @@ address a:focus {
   }
   /* HEADER */
 
-  /*
-  Создание бургера для навигации
-  */
-
   .header-container {
     display: flex;
     justify-content: space-around;
   }
 
+  .header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0;
+    transition: none;
+  }
+
+  /* BURGER MENU */
+
   .navigation {
-    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    box-shadow: 0 0 0 0 #0e2244;
+    background-color: rgba(14, 34, 68, 0.9);
+    border-radius: 0;
+    transition: none;
   }
 
   .navigation__logo {
+    margin-left: 40px;
     margin-right: 30px;
   }
 
   .navigation__list {
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: -1;
+    width: 100%;
+    background: rgba(14, 34, 68, 0.9);
+    padding: 3em 0 2em;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(1, 0.5, 0, 1);
+  }
+
+  .active {
+    transform: translateY(40px);
+  }
+
+  .navigation__list-item {
+    list-style: none;
+  }
+
+  .navigation__list-link {
+    padding: 1em;
+    color: #fff;
+    display: block;
+    background: none;
+    line-height: 1em;
+    font-size: 1.125em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .navigation__logo:hover,
+  .navigation__list-link:hover,
+  .navigation__logo:focus,
+  .navigation__list-link:focus {
+    color: rgb(147, 181, 255);
+    background-color: rgba(58, 104, 184, 0.3);
+    box-shadow: 0 0 0px 0 rgba(58, 104, 184, 0.3);
+  }
+
+  .menu__button {
+    display: block;
+  }
+
+  /* BURGER MENU END */
+
+  .navigation__button {
     display: none;
   }
 
