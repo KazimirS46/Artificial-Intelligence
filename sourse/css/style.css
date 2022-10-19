@@ -1580,7 +1580,7 @@ address a:focus {
   /* Features End */
 }
 
-@media (max-width: 424px) {
+@media (max-width: 425px) {
   .container {
     padding: 0 10px;
   }
@@ -1724,12 +1724,13 @@ address a:focus {
   /* FEATURES */
 
   .container-feature {
-    max-width: 402px;
+    max-width: 300px;
     padding: 0 20px;
   }
 
   .slider-box {
-    width: 362px;
+    width: 260px;
+    height: 35vh;
   }
 
   .slide__image {
@@ -1761,4 +1762,128 @@ address a:focus {
     right: -10px;
   }
   /* FEATURES END */
+
+  /* ABOUT */
+
+  .about {
+    padding: 1vw 0;
+  }
+
+  .about__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 85%;
+  }
+
+  .about__title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .about__text {
+    max-width: 100%;
+    font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+
+  .about-content::after {
+    top: 90%;
+    left: 0;
+    width: 100%;
+    background-position: center;
+    background-size: 75%;
+  }
+  /* ABOUT END */
+
+  /* FOOTER */
+  .footer {
+    padding: 10px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts {
+    max-width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+  .company__link {
+    margin-bottom: 5vw;
+  }
+  .company__title {
+    font-size: 1.3em;
+  }
+  .company__logo {
+    width: 5vw;
+  }
+  .company__info {
+    max-width: 85vw;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  .contacts-address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 50vw;
+    margin-bottom: 5vw;
+  }
+  .company__mail img,
+  .company__phone img,
+  .company__address img {
+    width: 5vw;
+    margin-right: 37px;
+  }
+
+  .company__address img {
+    margin: 0;
+  }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services__store {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .services__about {
+    text-align: center;
+    max-width: 200px;
+  }
+  .services__social {
+    width: 60vw;
+    margin-bottom: 2vw;
+  }
+  .services__social-link img {
+    width: 100%;
+  }
+  /* FOOTER END */
+}
+
+@media (max-width: 325px) {
+  /* FEATURE */
+  .container-feature {
+    max-width: 300px;
+    padding: 0 20px;
+  }
+
+  .slider-box {
+    width: 260px;
+    height: 100vw;
+  }
 }
