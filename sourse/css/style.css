@@ -1717,6 +1717,7 @@ address a:focus {
 
   .learning__info-image {
     position: static;
+    width: 75vw;
   }
 
   /* LEARNING END */
@@ -1884,6 +1885,6 @@ address a:focus {
 
   .slider-box {
     width: 260px;
-    height: 100vw;
+    height: 315px;
   }
 }
