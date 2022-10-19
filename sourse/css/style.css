@@ -1688,11 +1688,31 @@ address a:focus {
 
   .learning-content {
     flex-direction: column;
+    align-items: center;
   }
 
   .learning__info-content {
     max-width: 350px;
     margin: 0 auto;
+  }
+
+  .learning__description {
+    font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: center;
+    margin-bottom: 5vh;
+  }
+
+  .learning__info {
+    margin: 0 auto;
+    margin-bottom: 5vw;
+  }
+
+  .learning__title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
   }
 
   .learning__info-image {
