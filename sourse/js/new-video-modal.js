@@ -25,11 +25,13 @@ function modalOpen() {
   if (!closing) {
     const heroModal = heroContainer.querySelector('.hero__modal');
     heroModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 }
 
 function modalClose() {
   closing = true;
+  document.body.style.overflow = 'visible';
   const heroModal = heroContainer.querySelector('.hero__modal');
   heroModal.classList.remove('open');
   heroModal.classList.add('hide');
